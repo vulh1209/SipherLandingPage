@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from "styled-components";
 import "animate.css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
-
 import Button from "./components/Button";
+import realtimeDB from "./firebase.js"
+import { v4 as uuidv4 } from 'uuid';
+
 
 const Wrap = styled.div`
   width: 100vw;  
@@ -294,6 +296,9 @@ const FourTHContent = styled.div`
     margin-top: 16rem;
     margin-left: -8rem;
     position: relative;
+    span{
+      color:red;
+    }
     form{
       display: flex;
       flex-direction: column;
@@ -311,6 +316,8 @@ const FourTHContent = styled.div`
       background-color: #1EF6F930;
       margin: 0.5rem 0rem;
       width: 100%;
+      color: #1EF6F9;
+      padding: 0rem 1rem;
     }
     button{
       position: absolute;
@@ -339,7 +346,7 @@ const Socials = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 4rem;
+  margin-top: ${props => props.Subcribed ? '1rem' : '4rem'};
   width: 28rem;
 `;
 const SocialList = styled.div`
@@ -353,8 +360,42 @@ const SocialList = styled.div`
     width: 2rem;
   }
 `;
-
 export default function App() {
+  // const [DB, setDB] = useState([])
+  const [emailtext, setemailtext] = useState('')
+  const [wallettext, setwallettext] = useState('')
+  const [fullnametext, setfullnametext] = useState('')
+  const [Subcribed, setSubcribed] = useState(false)
+  const [isEmail, setisEmail] = useState(true)
+
+  const writeDeveloperData = (e, email = '', wallet = '', fullname = '') => {
+    e.preventDefault();
+    const EmailRegex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
+    if (email && EmailRegex.test(email)) {
+      realtimeDB.ref(`email/${uuidv4()}`).set({
+        email: email,
+        wallet: wallet,
+        fullname: fullname
+      });
+      setemailtext('');
+      setwallettext('');
+      setfullnametext('');
+      console.log('lưu xong');
+      setSubcribed(true)
+      setisEmail(true)
+    }
+    else {
+      setisEmail(false)
+      console.log('nhập lại');
+    }
+  }
+  // const fetchDB = async () => {
+  //   let ref = realtimeDB.ref('developers')
+  //   console.log(ref);
+  // };
+  // useEffect(() => {
+  //   fetchDB()
+  // }, [])
   return (
     <Wrap>
       <Mid>
@@ -362,14 +403,13 @@ export default function App() {
           <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.5">
             <img src='/images/img_1.svg' alt="" />
           </ScrollAnimation>
-
           <ScrollAnimation animateIn="animate__fadeInRight" duration="0.8">
             <WelcomeDescription>
               <h2>Welcome to</h2>
               <h1><span>SIPHΞR</span></h1>
               <p>What is Sipher?<br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-              <Button w='320' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='80' p_y='10' t="SUBCRIBE" />
+              <Button link='#subcribe' w='320' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='80' p_y='10' t="SUBCRIBE" />
             </WelcomeDescription>
           </ScrollAnimation>
           <Content>
@@ -568,10 +608,9 @@ export default function App() {
               </ThirdRight>
             </ThirdContent>
             <FourTHContent>
-              <Button w='240' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='40' p_y='12' t="SUBCRIBE" />
-
+              <Button w='240' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='40' p_y='12' t="SUBCRIBE" writeDeveloperData={writeDeveloperData} email={emailtext} wallet={wallettext} fullname={fullnametext} />
               <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.5">
-                <FourTHHeader>
+                <FourTHHeader id='subcribe'>
                   <h2>Let’s join us</h2>
                   <h1><span>LATEST NEWS</span></h1>
                   <img src='/images/underline_header_1.svg' alt="" />
@@ -579,16 +618,17 @@ export default function App() {
               </ScrollAnimation>
               <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.55">
                 <form>
-                  <label>Email Address <span>*</span></label>
-                  <input />
+                  <label>Email Address <span>* {!isEmail && 'Please check your email !'}</span></label>
+                  <input onChange={(e) => setemailtext(e.target.value)} value={emailtext} />
                   <label>Wallet Address</label>
-                  <input />
+                  <input onChange={(e) => setwallettext(e.target.value)} value={wallettext} />
                   <label>Your name</label>
-                  <input />
+                  <input onChange={(e) => setfullnametext(e.target.value)} value={fullnametext} />
                 </form>
               </ScrollAnimation>
+              {Subcribed && <h4>THANK YOU FOR SUBCRIBING!</h4>}
               <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.6">
-                <Socials>
+                <Socials Subcribed={Subcribed}>
                   <h3>VERY SOCIAL. MUST JOIN. WOW!</h3>
                   <SocialList>
                     <img src='/images/icons/fb.svg' alt="" />
