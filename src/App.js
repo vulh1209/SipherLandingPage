@@ -9,12 +9,23 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+`;
+const lineWrap = styled.div`
+  position: absolute;
+  height: 1rem;
+  top: 0rem;
+  width:100rem;
+  left:0;
+  background-color:#FCD11F;
+  z-index: 1;
 `;
 const Mid = styled.div`
   width: 80rem;
   background-image: url("/images/bg.svg");  
   background-repeat  : no-repeat;
   background-size: cover;
+  z-index: 2;
 `;
 const Welcome = styled.div`
   display: flex;
@@ -46,11 +57,12 @@ const Content = styled.div`
   width: 80rem;
   background-image: url("/images/bgline.svg");  
   background-repeat  : no-repeat;
-  background-size: cover;
+  background-size: contain;
 `;
 const FirstContent = styled.div`
   h1{
     font-size: 5rem;
+    margin-bottom: 1.5rem;
   }
   h3{
     font-size: 4rem;
@@ -147,12 +159,13 @@ const SecondLeft = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  margin-top: 16rem;
   h4{
     padding: 1rem 2rem 0rem 0rem;
   }
   p{
     padding:0rem 2rem 0rem 0rem;
-    margin: 0rem;
+    margin: 0rem 0rem 1rem 0rem;
     width: 24rem;
     text-align: right;
     text-align: justify;
@@ -187,6 +200,7 @@ const SecondRightP1 = styled.div`
   justify-content: center;
   align-items: flex-start;
   padding-left:2rem;
+  margin: 0.5rem 0rem;
   p{
     padding-left: 2rem;
     margin: 0rem;
@@ -211,11 +225,139 @@ const SecondRightIconList = styled.div`
     margin: 0em 0rem 1rem 0rem;
   }
 `;
-
+const ThirdContent = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+`;
+const ThirdHeader = styled.div`
+  margin: 2rem 0rem 4rem 8rem;
+  h1{
+    font-size: 5rem; 
+    margin-left : 4rem;
+    height: 5rem;
+  }
+  img{
+    margin-top: -1rem;
+  }
+`;
+const ThirdLeft = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  img{
+    width: 24rem;
+    margin-bottom: -20rem;
+  }
+`;
+const ThirdRight = styled.div`
+  width: 44rem;
+`;
+const ThirdRightItem = styled.div`
+  text-align: left;
+  padding-right: 8rem;
+  padding: 2rem 8rem 2rem 0rem;
+  div{    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 40rem;
+  }
+  h4{
+    font-size: 2rem;
+    margin: 0rem;
+    padding:0rem 1rem;
+  }
+  h5{
+    font-size: 1.2rem;
+    color: #B3B89A;
+  }
+  img{
+    align-self: flex-end;
+    width: 42rem;
+  }
+  ul{
+    margin: 0rem;
+  }
+`;
+const FourTHContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16rem;
+    margin-left: -8rem;
+    position: relative;
+    form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: 28rem;
+    }
+    label{
+      text-align: left;
+      font-size: 1rem;
+      margin:0.5rem 0rem;
+    }
+    input{
+      height: 2rem;
+      background-color: #1EF6F930;
+      margin: 0.5rem 0rem;
+      width: 100%;
+    }
+    button{
+      position: absolute;
+      top:0rem;
+      right:3.5rem
+    }
+`;
+const FourTHHeader = styled.div`
+  margin: 0rem 0rem 2rem 0rem;
+  h1{
+    font-size: 5rem; 
+    margin-left : 4rem;
+    height: 5rem;
+  }
+  img{
+    margin-top: -1rem;
+  }
+  h2{
+    font-size: 3rem;
+    font-weight: normal;
+    margin-left : 4rem;
+  }
+`;
+const Socials = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 4rem;
+  width: 28rem;
+`;
+const SocialList = styled.div`
+  width: 28rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  img{
+    padding: 2rem 0rem 8rem 0rem;
+    width: 2rem;
+  }
+`;
 
 export default function App() {
   return (
     <Wrap>
+      <lineWrap/>
+      <lineWrap topline="40rem"/>
+      <lineWrap topline="60rem"/>
+      <lineWrap topline="80rem"/>
       <Mid>
         <Welcome>
           <img src='/images/img_1.svg' alt="" />
@@ -325,6 +467,77 @@ export default function App() {
                 </SecondRightP1>
               </SecondRight>
             </SecondContent>
+            <ThirdContent>
+              <ThirdLeft>
+                <img src='/images/img_3.svg' alt="" />
+              </ThirdLeft>
+              <ThirdRight>
+                <ThirdHeader>
+                  <h1><span>ROADMAP</span></h1>
+                  <img src='/images/underline_header_1.svg' alt="" />
+                </ThirdHeader>
+                <ThirdRightItem>
+                  <div><h4><span>PHASE 1</span></h4><h5>Jun 2021  -  Jul 2021</h5></div>
+                  <img src='/images/underline_left.svg' alt="" />
+                  <ul>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                  </ul>
+                </ThirdRightItem>
+                <ThirdRightItem>
+                  <div><h4><span>PHASE 2</span></h4><h5>Jul 2021  -  Nov 2021</h5></div>
+                  <img src='/images/underline_left.svg' alt="" />
+                  <ul>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                  </ul>
+                </ThirdRightItem>
+                <ThirdRightItem>
+                  <div><h4><span>PHASE 3</span></h4><h5>Nov 2021  -  Far future</h5></div>
+                  <img src='/images/underline_left.svg' alt="" />
+                  <ul>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                  </ul>
+                </ThirdRightItem>
+              </ThirdRight>
+            </ThirdContent>
+            <FourTHContent>
+            <Button w='240' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='40' p_y='12' t="SUBCRIBE" />
+              <FourTHHeader>
+                <h2>Let’s join us</h2>
+                <h1><span>LATEST NEWS</span></h1>
+                <img src='/images/underline_header_1.svg' alt="" />
+              </FourTHHeader>
+              <form>
+                <label>Email Address <span>*</span></label>
+                <input />
+                <label>Wallet Address</label>
+                <input />
+                <label>Your name</label>
+                <input />
+              </form>
+              <Socials>
+                <h3>VERY SOCIAL. MUST JOIN. WOW!</h3>
+                <SocialList>
+                  <img src='/images/icons/fb.svg' alt="" />
+                  <img src='/images/icons/discord.svg' alt="" />
+                  <img src='/images/icons/twitter.svg' alt="" />
+                  <img src='/images/icons/insta.svg' alt="" />
+                  <img src='/images/icons/linked.svg' alt="" />
+                  <img src='/images/icons/telegram.svg' alt="" />
+                </SocialList>
+              </Socials>
+            </FourTHContent>
           </Content>
         </Welcome>
       </Mid>
