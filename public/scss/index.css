@@ -41,4 +41,8 @@ p{
 }
 h5{
   margin: 0rem;
+}  
+::-webkit-scrollbar {
+  width: 0px; 
+  height: 0px;
 }

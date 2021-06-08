@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
+import "animate.css/animate.min.css";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import Button from "./components/Button";
 
@@ -226,10 +228,11 @@ const SecondRightIconList = styled.div`
   }
 `;
 const ThirdContent = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 const ThirdHeader = styled.div`
   margin: 2rem 0rem 4rem 8rem;
@@ -354,194 +357,254 @@ const SocialList = styled.div`
 export default function App() {
   return (
     <Wrap>
-      <lineWrap/>
-      <lineWrap topline="40rem"/>
-      <lineWrap topline="60rem"/>
-      <lineWrap topline="80rem"/>
       <Mid>
         <Welcome>
-          <img src='/images/img_1.svg' alt="" />
-          <WelcomeDescription>
-            <h2>Welcome to</h2>
-            <h1><span>SIPHΞR</span></h1>
-            <p>What is Sipher?<br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.5">
+            <img src='/images/img_1.svg' alt="" />
+          </ScrollAnimation>
+
+          <ScrollAnimation animateIn="animate__fadeInRight" duration="0.8">
+            <WelcomeDescription>
+              <h2>Welcome to</h2>
+              <h1><span>SIPHΞR</span></h1>
+              <p>What is Sipher?<br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            <Button w='320' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='80' p_y='10' t="SUBCRIBE" />
-          </WelcomeDescription>
+              <Button w='320' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='80' p_y='10' t="SUBCRIBE" />
+            </WelcomeDescription>
+          </ScrollAnimation>
           <Content>
             <FirstContent>
               <UniqueNFTs>
-                <h3>We create</h3>
-                <h1><span>UNIQUE NFTs</span></h1>
-                <UniqueNFTsP3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.5">
+                  <h3>We create</h3>
+                  <h1><span>UNIQUE NFTs</span></h1>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.55">
+                  <UniqueNFTsP3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</UniqueNFTsP3>
-                <H5WithLine>
-                  <h5>Provable algorithm to generate NFTs as unique doge agent</h5>
-                  <img src='/images/underline_1.svg' alt="" />
-                </H5WithLine>
-                <UniqueNFTsP1>
-                  <img src='/images/img_2.svg' alt="" />
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.6">
+                  <H5WithLine>
+                    <h5>Provable algorithm to generate NFTs as unique doge agent</h5>
+                    <img src='/images/underline_1.svg' alt="" />
+                  </H5WithLine>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.65">
+                  <UniqueNFTsP1>
+                    <img src='/images/img_2.svg' alt="" />
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </UniqueNFTsP1>
-                <H5WithLine>
-                  <h5>Claim your ownership through smart contract</h5>
-                  <img src='/images/underline_1.svg' alt="" />
-                </H5WithLine>
-                <UniqueNFTsP2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </UniqueNFTsP1>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.7">
+                  <H5WithLine>
+                    <h5>Claim your ownership through smart contract</h5>
+                    <img src='/images/underline_1.svg' alt="" />
+                  </H5WithLine>
+                  <UniqueNFTsP2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</UniqueNFTsP2>
-                <H5WithLine>
-                  <h5>View your collection on your Crypto Wallet</h5>
-                  <img src='/images/underline_1.svg' alt="" />
-                </H5WithLine>
-                <UniqueNFTsP2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.75">
+                  <H5WithLine>
+                    <h5>View your collection on your Crypto Wallet</h5>
+                    <img src='/images/underline_1.svg' alt="" />
+                  </H5WithLine>
+                  <UniqueNFTsP2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</UniqueNFTsP2>
-                <WalletList>
-                  <img src='/images/metamask.svg' alt="" />
-                  <img src='/images/binance.svg' alt="" />
-                  <img src='/images/trust.svg' alt="" />
-                  <img src='/images/walletconnect.svg' alt="" />
-                </WalletList>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.8">
+                  <WalletList>
+                    <img src='/images/metamask.svg' alt="" />
+                    <img src='/images/binance.svg' alt="" />
+                    <img src='/images/trust.svg' alt="" />
+                    <img src='/images/walletconnect.svg' alt="" />
+                  </WalletList>
+                </ScrollAnimation>
               </UniqueNFTs>
             </FirstContent>
             <SecondContent>
               <SecondLeft>
                 <CardList>
-                  <img src='/images/card_1.svg' alt="" />
-                  <img src='/images/card_2.svg' alt="" />
-                  <img src='/images/card_3.svg' alt="" />
+                  <ScrollAnimation animateIn="animate__fadeInLeft" duration="1">
+                    <img src='/images/card_1.svg' alt="" />
+                  </ScrollAnimation>
+                  <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.6">
+                    <img src='/images/card_2.svg' alt="" />
+                  </ScrollAnimation>
+                  <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.2">
+                    <img src='/images/card_3.svg' alt="" />
+                  </ScrollAnimation>
                 </CardList>
-                <H4WithLineLeft>
-                  <h4><span>PLAY TO EARN</span></h4>
-                  <img src='/images/underline_left.svg' alt="" />
-                </H4WithLineLeft>
-                <p>Accompany your NTFs in Sipher's world games and get awesome rewards in both cryptocurrency and game assets.</p>
-                <ul><li>SOCIAL GAMES</li></ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <ul><li>FIGHTING GAMES</li></ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <ul><li>FARMING GAMES</li></ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.5">
+                  <H4WithLineLeft>
+                    <h4><span>PLAY TO EARN</span></h4>
+                    <img src='/images/underline_left.svg' alt="" />
+                  </H4WithLineLeft>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.55">
+                  <p>Accompany your NTFs in Sipher's world games and get awesome rewards in both cryptocurrency and game assets.</p>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.6">
+                  <ul><li>SOCIAL GAMES</li></ul>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.65">
+                  <ul><li>FIGHTING GAMES</li></ul>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.7">
+                  <ul><li>FARMING GAMES</li></ul>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </ScrollAnimation>
               </SecondLeft>
               <SecondRight>
                 <h2>And make your</h2>
                 <h1><span>NFTs GO LIVE</span></h1>
                 <img src='/images/underline_header.svg' alt="" />
-                <H4WithLineRight>
-                  <h4><span>CHAT WITH NFTs</span></h4>
-                  <img src='/images/underline_right.svg' alt="" />
-                </H4WithLineRight>
-                <SecondRightP1>
-                  <img src='/images/card_4.svg' alt="" />
-                  <p>Each NFT you own becomes a companion you can chat with. They differ not only in appearance but also in personality and skills. And especially you can train them to grow.</p>
-                </SecondRightP1>
-                <SecondRightIconList>
-                  <div>
-                    <img src='/images/smile.svg' alt="" />
-                    <p>Tell jokes</p>
-                  </div>
-                  <div>
-                    <img src='/images/star.svg' alt="" />
-                    <p>Fortune-telling</p>
-                  </div>
-                  <div>
-                    <img src='/images/dolas.svg' alt="" />
-                    <p>Hot deal hunter</p>
-                  </div>
-                </SecondRightIconList>
-                <H4WithLineRight>
-                  <h4><span>NFTs AS ASSISTANT</span></h4>
-                  <img src='/images/underline_right.svg' alt="" />
-                </H4WithLineRight>
-                <SecondRightP1>
-                  <img src='/images/money.svg' alt="" />
-                  <p>Your NFTs may possess the knowledge of investing in cryptocurrencies like a guru and is always ready to give you Not-financial advices.</p>
-                </SecondRightP1>
-                <SecondRightP1>
-                  <img src='/images/hand.svg' alt="" />
-                  <p>Your NFTs may possess ability to keep track of your favorite cryptocurrencies to make notifications of your price settings</p>
-                </SecondRightP1>
-                <SecondRightP1>
-                  <img src='/images/magic.svg' alt="" />
-                  <p>Your NFTs may possess ability to follow up on your favorite cryptocurrency news to keep you updated ASAP.</p>
-                </SecondRightP1>
+                <ScrollAnimation animateIn="animate__fadeInRight" duration="0.55">
+                  <H4WithLineRight>
+                    <h4><span>CHAT WITH NFTs</span></h4>
+                    <img src='/images/underline_right.svg' alt="" />
+                  </H4WithLineRight>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInRight" duration="0.6">
+                  <SecondRightP1>
+                    <img src='/images/card_4.svg' alt="" />
+                    <p>Each NFT you own becomes a companion you can chat with. They differ not only in appearance but also in personality and skills. And especially you can train them to grow.</p>
+                  </SecondRightP1>
+                  <SecondRightIconList>
+                    <div>
+                      <img src='/images/smile.svg' alt="" />
+                      <p>Tell jokes</p>
+                    </div>
+                    <div>
+                      <img src='/images/star.svg' alt="" />
+                      <p>Fortune-telling</p>
+                    </div>
+                    <div>
+                      <img src='/images/dolas.svg' alt="" />
+                      <p>Hot deal hunter</p>
+                    </div>
+                  </SecondRightIconList>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInRight" duration="0.65">
+                  <H4WithLineRight>
+                    <h4><span>NFTs AS ASSISTANT</span></h4>
+                    <img src='/images/underline_right.svg' alt="" />
+                  </H4WithLineRight>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInRight" duration="0.7">
+                  <SecondRightP1>
+                    <img src='/images/money.svg' alt="" />
+                    <p>Your NFTs may possess the knowledge of investing in cryptocurrencies like a guru and is always ready to give you Not-financial advices.</p>
+                  </SecondRightP1>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInRight" duration="0.75">
+                  <SecondRightP1>
+                    <img src='/images/hand.svg' alt="" />
+                    <p>Your NFTs may possess ability to keep track of your favorite cryptocurrencies to make notifications of your price settings</p>
+                  </SecondRightP1>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInRight" duration="0.8">
+                  <SecondRightP1>
+                    <img src='/images/magic.svg' alt="" />
+                    <p>Your NFTs may possess ability to follow up on your favorite cryptocurrency news to keep you updated ASAP.</p>
+                  </SecondRightP1>
+                </ScrollAnimation>
               </SecondRight>
             </SecondContent>
             <ThirdContent>
               <ThirdLeft>
-                <img src='/images/img_3.svg' alt="" />
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.8">
+                  <img src='/images/img_3.svg' alt="" />
+                </ScrollAnimation>
               </ThirdLeft>
               <ThirdRight>
-                <ThirdHeader>
-                  <h1><span>ROADMAP</span></h1>
-                  <img src='/images/underline_header_1.svg' alt="" />
-                </ThirdHeader>
-                <ThirdRightItem>
-                  <div><h4><span>PHASE 1</span></h4><h5>Jun 2021  -  Jul 2021</h5></div>
-                  <img src='/images/underline_left.svg' alt="" />
-                  <ul>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                  </ul>
-                </ThirdRightItem>
-                <ThirdRightItem>
-                  <div><h4><span>PHASE 2</span></h4><h5>Jul 2021  -  Nov 2021</h5></div>
-                  <img src='/images/underline_left.svg' alt="" />
-                  <ul>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                  </ul>
-                </ThirdRightItem>
-                <ThirdRightItem>
-                  <div><h4><span>PHASE 3</span></h4><h5>Nov 2021  -  Far future</h5></div>
-                  <img src='/images/underline_left.svg' alt="" />
-                  <ul>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                    <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                  </ul>
-                </ThirdRightItem>
+                <ScrollAnimation animateIn="animate__fadeInRight" duration="0.8">
+                  <ThirdHeader>
+                    <h1><span>ROADMAP</span></h1>
+                    <img src='/images/underline_header_1.svg' alt="" />
+                  </ThirdHeader>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.5">
+                  <ThirdRightItem>
+                    <div><h4><span>PHASE 1</span></h4><h5>Jun 2021  -  Jul 2021</h5></div>
+                    <img src='/images/underline_left.svg' alt="" />
+                    <ul>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    </ul>
+                  </ThirdRightItem>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.55">
+                  <ThirdRightItem>
+                    <div><h4><span>PHASE 2</span></h4><h5>Jul 2021  -  Nov 2021</h5></div>
+                    <img src='/images/underline_left.svg' alt="" />
+                    <ul>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    </ul>
+                  </ThirdRightItem>
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.6">
+                  <ThirdRightItem>
+                    <div><h4><span>PHASE 3</span></h4><h5>Nov 2021  -  Far future</h5></div>
+                    <img src='/images/underline_left.svg' alt="" />
+                    <ul>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                      <li>Objective 01 Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                    </ul>
+                  </ThirdRightItem>
+                </ScrollAnimation>
               </ThirdRight>
             </ThirdContent>
             <FourTHContent>
-            <Button w='240' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='40' p_y='12' t="SUBCRIBE" />
-              <FourTHHeader>
-                <h2>Let’s join us</h2>
-                <h1><span>LATEST NEWS</span></h1>
-                <img src='/images/underline_header_1.svg' alt="" />
-              </FourTHHeader>
-              <form>
-                <label>Email Address <span>*</span></label>
-                <input />
-                <label>Wallet Address</label>
-                <input />
-                <label>Your name</label>
-                <input />
-              </form>
-              <Socials>
-                <h3>VERY SOCIAL. MUST JOIN. WOW!</h3>
-                <SocialList>
-                  <img src='/images/icons/fb.svg' alt="" />
-                  <img src='/images/icons/discord.svg' alt="" />
-                  <img src='/images/icons/twitter.svg' alt="" />
-                  <img src='/images/icons/insta.svg' alt="" />
-                  <img src='/images/icons/linked.svg' alt="" />
-                  <img src='/images/icons/telegram.svg' alt="" />
-                </SocialList>
-              </Socials>
+              <Button w='240' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='40' p_y='12' t="SUBCRIBE" />
+
+              <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.5">
+                <FourTHHeader>
+                  <h2>Let’s join us</h2>
+                  <h1><span>LATEST NEWS</span></h1>
+                  <img src='/images/underline_header_1.svg' alt="" />
+                </FourTHHeader>
+              </ScrollAnimation>
+              <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.55">
+                <form>
+                  <label>Email Address <span>*</span></label>
+                  <input />
+                  <label>Wallet Address</label>
+                  <input />
+                  <label>Your name</label>
+                  <input />
+                </form>
+              </ScrollAnimation>
+              <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.6">
+                <Socials>
+                  <h3>VERY SOCIAL. MUST JOIN. WOW!</h3>
+                  <SocialList>
+                    <img src='/images/icons/fb.svg' alt="" />
+                    <img src='/images/icons/discord.svg' alt="" />
+                    <img src='/images/icons/twitter.svg' alt="" />
+                    <img src='/images/icons/insta.svg' alt="" />
+                    <img src='/images/icons/linked.svg' alt="" />
+                    <img src='/images/icons/telegram.svg' alt="" />
+                  </SocialList>
+                </Socials>
+              </ScrollAnimation>
             </FourTHContent>
           </Content>
         </Welcome>
       </Mid>
-    </Wrap>
+    </Wrap >
   )
 }
 
