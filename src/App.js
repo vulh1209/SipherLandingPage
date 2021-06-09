@@ -253,8 +253,9 @@ const ThirdLeft = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   img{
-    width: 24rem;
+    width: 28rem;
     margin-bottom: -20rem;
+    margin-left: -4.5rem;
   }
 `;
 const ThirdRight = styled.div`
@@ -359,6 +360,11 @@ const SocialList = styled.div`
     padding: 2rem 0rem 8rem 0rem;
     width: 2rem;
   }
+`;
+const Subcribe = styled.img`  
+  position: absolute;
+  top:0rem;
+  right:4rem;
 `;
 export default function App() {
   // const [DB, setDB] = useState([])
@@ -608,7 +614,15 @@ export default function App() {
               </ThirdRight>
             </ThirdContent>
             <FourTHContent>
-              <Button w='240' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='40' p_y='12' t="SUBCRIBE" writeDeveloperData={writeDeveloperData} email={emailtext} wallet={wallettext} fullname={fullnametext} />
+              {/* <Button w='240' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='40' p_y='12' t="SUBCRIBE" writeDeveloperData={writeDeveloperData} email={emailtext} wallet={wallettext} fullname={fullnametext} /> */}
+              {
+                emailtext &&
+                <Subcribe src='/images/btnActive.svg' alt="" onClick={(e) => writeDeveloperData(e, emailtext, wallettext, fullnametext)} />
+              }
+              {
+                !emailtext &&
+                <Subcribe src='/images/btnDeactive.svg' alt="" />
+              }
               <ScrollAnimation animateIn="animate__fadeInLeft" duration="0.5">
                 <FourTHHeader id='subcribe'>
                   <h2>Let’s join us</h2>
