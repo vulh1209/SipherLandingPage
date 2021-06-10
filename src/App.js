@@ -5,6 +5,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import Button from "./components/Button";
 import realtimeDB from "./firebase.js"
 import { v4 as uuidv4 } from 'uuid';
+import { useTimeDiff } from "react-use-timediff";
 
 
 const Wrap = styled.div`
@@ -46,15 +47,13 @@ const WelcomeDescription = styled.div`
   align-items: flex-start;
   padding-left: 5vw;
   width: 30rem;
-  h1{
-    font-size: 5rem;
-  }
   h2{
     font-size: 4rem;
     font-weight: normal;
+    margin-bottom: 2rem;
   }
   p{
-    margin-bottom: 4rem;
+    margin:2rem 0rem 2rem 0rem;
   }
 `;
 const Content = styled.div`
@@ -294,7 +293,7 @@ const FourTHContent = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 16rem;
+    margin-top: 6rem;
     margin-left: -8rem;
     position: relative;
     span{
@@ -363,9 +362,84 @@ const SocialList = styled.div`
 `;
 const Subcribe = styled.img`  
   position: absolute;
-  top:0rem;
-  right:4rem;
+  top:29rem;
+  right:2rem;
 `;
+const ThirdHalfContent = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16rem;
+  position: relative;
+`;
+const Clock = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4rem;
+  p{
+    font-size: 5rem; 
+    margin-top: -3rem;
+    background: -webkit-linear-gradient(180deg, #1EF6F9 0%, #FCD11F 42.7%, #1EF6F9 94.3%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+`;
+const ClockItem = styled.div`
+  margin: 1rem;  
+  text-align: center;
+h1{
+  font-size: 5rem; 
+  margin-left : 4rem;
+  height: 5rem;  
+  background-image: url("/images/bgClock.svg");  
+  background-repeat  : no-repeat;
+  background-size: cover;
+  width: 10rem;
+  height: 10rem;
+  margin: 0rem;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+p{
+  margin-top: 0.5rem;
+  font-size:1.5rem;
+}
+`;
+const ThirdHalfHeader = styled.div`
+  margin: 0rem 0rem 2rem -8rem;
+  h1{
+    font-size: 5rem; 
+    margin-left : 4rem;
+    height: 5rem;
+  }
+  img{
+    margin-top: -1rem;
+  }
+  h2{
+    font-size: 3rem;
+    font-weight: normal;
+    margin-left : 4rem;
+  }
+`;
+const ComingSoonContent = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 18%;
+  p{
+    margin-left:4% ;
+  }
+`;
+
 export default function App() {
   // const [DB, setDB] = useState([])
   const [emailtext, setemailtext] = useState('')
@@ -395,14 +469,18 @@ export default function App() {
       console.log('nhập lại');
     }
   }
-  // const fetchDB = async () => {
-  //   let ref = realtimeDB.ref('developers')
-  //   console.log(ref);
-  // };
+
   // useEffect(() => {
-  //   fetchDB()
-  // }, [])
-  return (
+  //   const timerID = setInterval(() => tick(), 1000);
+  //   return function cleanup() {
+  //     clearInterval(timerID);
+  //   };
+  // })
+    const date = (new Date(2021, 6, 30, 13, 0, 0));
+    const diff = useTimeDiff(date, {
+      live: true
+    });
+  return (    
     <Wrap>
       <Mid>
         <Welcome>
@@ -411,8 +489,8 @@ export default function App() {
           </ScrollAnimation>
           <ScrollAnimation animateIn="animate__fadeInRight" duration="0.8">
             <WelcomeDescription>
-              <h2>Welcome to</h2>
-              <h1><span>SIPHΞR</span></h1>
+              <h2>Welcome to</h2>              
+              <img src='/images/logo.svg' alt="" />
               <p>What is Sipher?<br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
               <Button link='#subcribe' w='320' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='80' p_y='10' t="SUBCRIBE" />
@@ -613,6 +691,45 @@ export default function App() {
                 </ScrollAnimation>
               </ThirdRight>
             </ThirdContent>
+            <ThirdHalfContent>
+              <ScrollAnimation animateIn="animate__fadeInRight" duration="0.6">
+                <ThirdHalfHeader>
+                  <h2>SIPHERs</h2>
+                  <h1><span>COMING SOON</span></h1>
+                  <img src='/images/underline_header_1.svg' alt="" />
+                </ThirdHalfHeader>
+              </ScrollAnimation>
+              <ScrollAnimation animateIn="animate__fadeInRight" duration="0.7">
+                <Clock>
+                  <ClockItem>
+                    <h1><span>{diff.days}</span></h1>
+                    <p>DAYS</p>
+                  </ClockItem>
+                  <p>:</p>
+                  <ClockItem>
+                    <h1><span>{diff.hours}</span></h1>
+                    <p>HOURS</p>
+                  </ClockItem>
+                  <p>:</p>
+                  <ClockItem>
+                    <h1><span>{diff.minutes}</span></h1>
+                    <p>MINUTES</p>
+                  </ClockItem>
+                  <p>:</p>
+                  <ClockItem>
+                    <h1><span>{diff.seconds}</span></h1>
+                    <p>SECOUNDS</p>
+                  </ClockItem>
+                </Clock>
+              </ScrollAnimation>
+              <ScrollAnimation animateIn="animate__fadeInRight" duration="0.8">
+                <ComingSoonContent>
+                  <img src='/images/underline_right.svg' alt="" />
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </ComingSoonContent>
+              </ScrollAnimation>
+            </ThirdHalfContent>
             <FourTHContent>
               {/* <Button w='240' h='80' c1='#1EF6F9FF' c2='#FCD11FFF' fw='600' fs='30' p_x='40' p_y='12' t="SUBCRIBE" writeDeveloperData={writeDeveloperData} email={emailtext} wallet={wallettext} fullname={fullnametext} /> */}
               {
