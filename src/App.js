@@ -481,11 +481,11 @@ export default function App() {
     }
   }
   const tick = () => {
-    let difference = +(new Date(2021, 6, 30, 13, 0, 0)) - +new Date();
+    let difference = (new Date(2021, 6, 30, 0, 0, 0,0)) - new Date();
     let timeLeft = {};
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        days: Math.floor((difference / (1000 * 60 * 60 * 24))-30),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60)
