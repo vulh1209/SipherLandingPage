@@ -5,7 +5,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import Button from "./components/Button";
 import realtimeDB from "./firebase.js"
 import { v4 as uuidv4 } from 'uuid';
-import { useTimeDiff } from "react-use-timediff";
+import { Animated } from "react-animated-css";
 
 
 const Wrap = styled.div`
@@ -16,15 +16,15 @@ const Wrap = styled.div`
   align-items: center;
   position: relative;
 `;
-const lineWrap = styled.div`
-  position: absolute;
-  height: 1rem;
-  top: 0rem;
-  width:100rem;
-  left:0;
-  background-color:#FCD11F;
-  z-index: 1;
-`;
+// const lineWrap = styled.div`
+//   position: absolute;
+//   height: 1rem;
+//   top: 0rem;
+//   width:100rem;
+//   left:0;
+//   background-color:#FCD11F;
+//   z-index: 1;
+// `;
 const Mid = styled.div`
   width: 80rem;
   background-image: url("/images/bg.svg");  
@@ -371,7 +371,7 @@ const ThirdHalfContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 16rem;
+  margin-top: 14rem;
   position: relative;
 `;
 const Clock = styled.div`
@@ -380,6 +380,7 @@ const Clock = styled.div`
   justify-content: center;
   align-items: center;
   margin-left: 4rem;
+  margin-bottom: 1.5rem;
   p{
     font-size: 5rem; 
     margin-top: -3rem;
@@ -407,9 +408,11 @@ h1{
   justify-content: center;
   align-items: center;
 }
-p{
-  margin-top: 0.5rem;
+h5{
+  margin-top: 0.8rem;
   font-size:1.5rem;
+  color: white;
+  font-weight: 500;
 }
 `;
 const ThirdHalfHeader = styled.div`
@@ -435,8 +438,10 @@ const ComingSoonContent = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   margin-left: 18%;
+  
   p{
     margin-left:4% ;
+    margin-top: 1rem;
   }
 `;
 
@@ -447,6 +452,12 @@ export default function App() {
   const [fullnametext, setfullnametext] = useState('')
   const [Subcribed, setSubcribed] = useState(false)
   const [isEmail, setisEmail] = useState(true)
+  const [Timer, setTimer] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  })
 
   const writeDeveloperData = (e, email = '', wallet = '', fullname = '') => {
     e.preventDefault();
@@ -469,18 +480,26 @@ export default function App() {
       console.log('nhập lại');
     }
   }
-
-  // useEffect(() => {
-  //   const timerID = setInterval(() => tick(), 1000);
-  //   return function cleanup() {
-  //     clearInterval(timerID);
-  //   };
-  // })
-    const date = (new Date(2021, 6, 30, 13, 0, 0));
-    const diff = useTimeDiff(date, {
-      live: true
-    });
-  return (    
+  const tick = () => {
+    let difference = +(new Date(2021, 6, 30, 13, 0, 0)) - +new Date();
+    let timeLeft = {};
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      };
+    }
+    setTimer(timeLeft);
+  }
+  useEffect(() => {
+    const timerID = setInterval(() => tick(), 1000);
+    return function cleanup() {
+      clearInterval(timerID);
+    };
+  })
+  return (
     <Wrap>
       <Mid>
         <Welcome>
@@ -489,7 +508,7 @@ export default function App() {
           </ScrollAnimation>
           <ScrollAnimation animateIn="animate__fadeInRight" duration="0.8">
             <WelcomeDescription>
-              <h2>Welcome to</h2>              
+              <h2>Welcome to</h2>
               <img src='/images/logo.svg' alt="" />
               <p>What is Sipher?<br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -702,23 +721,23 @@ export default function App() {
               <ScrollAnimation animateIn="animate__fadeInRight" duration="0.7">
                 <Clock>
                   <ClockItem>
-                    <h1><span>{diff.days}</span></h1>
-                    <p>DAYS</p>
+                    <h1><span>{Timer.days}</span></h1>
+                    <h5>DAYS</h5>
                   </ClockItem>
                   <p>:</p>
                   <ClockItem>
-                    <h1><span>{diff.hours}</span></h1>
-                    <p>HOURS</p>
+                    <h1><span>{Timer.hours}</span></h1>
+                    <h5>HOURS</h5>
                   </ClockItem>
                   <p>:</p>
                   <ClockItem>
-                    <h1><span>{diff.minutes}</span></h1>
-                    <p>MINUTES</p>
+                    <h1><span>{Timer.minutes}</span></h1>
+                    <h5>MINUTES</h5>
                   </ClockItem>
                   <p>:</p>
                   <ClockItem>
-                    <h1><span>{diff.seconds}</span></h1>
-                    <p>SECOUNDS</p>
+                    <h1><span>{Timer.seconds}</span></h1>
+                    <h5>SECOUNDS</h5>
                   </ClockItem>
                 </Clock>
               </ScrollAnimation>
