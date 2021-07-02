@@ -8,7 +8,7 @@ import Button from "./components/Button";
 // import { Animated } from "react-animated-css";
 
 const Wrap = styled.div`
-  width: 100%;  
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -519,12 +519,12 @@ export default function Desktop() {
     setTimer(timeLeft);
   };
   useEffect(() => {
-    console.log('desk');
+    console.log("desk");
     const timerID = setInterval(() => tick(), 1000);
     return function cleanup() {
       clearInterval(timerID);
     };
-  },[]);
+  }, []);
   return (
     <Wrap>
       <Mid>
@@ -535,8 +535,7 @@ export default function Desktop() {
             </ScrollAnimation>
             <ScrollAnimation animateIn="animate__fadeInRight" duration="0.8">
               <WelcomeDescription>
-                <h2>Welcome to 
-        desk</h2>
+                <h2>Welcome to</h2>
                 <img src="/images/logo.svg" alt="" />
                 <p>
                   What is Sipher?
