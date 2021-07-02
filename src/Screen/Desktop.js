@@ -12,7 +12,6 @@ const Wrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 `;
 const Mid = styled.div`
   width: 80rem;
@@ -536,7 +535,8 @@ export default function Desktop() {
             </ScrollAnimation>
             <ScrollAnimation animateIn="animate__fadeInRight" duration="0.8">
               <WelcomeDescription>
-                <h2>Welcome to</h2>
+                <h2>Welcome to 
+        desk</h2>
                 <img src="/images/logo.svg" alt="" />
                 <p>
                   What is Sipher?

@@ -11,9 +11,6 @@ body {
 /* cursor: url("/images/icons/pet.svg"), auto; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
 h1{  
   margin: 0rem;
 }
@@ -43,7 +40,13 @@ p{
 h5{
   margin: 0rem;
 }  
-/* ::-webkit-scrollbar {
+h6{
+  text-align: center;
+  margin: 0rem 0rem;
+  padding: 0 5%;
+  color: transparent;
+}
+::-webkit-scrollbar {
   width: 0px; 
   height: 0px;
-} */
+}

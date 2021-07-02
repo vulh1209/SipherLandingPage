@@ -12,7 +12,6 @@ const Wrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 `;
 const Mid = styled.div`
   width: 100%;
@@ -543,6 +542,7 @@ export default function TabletY() {
   },[]);
   return (
     <Wrap>
+      
       <Mid>
         <Welcome>
           <HeaderWelcome>
@@ -551,7 +551,7 @@ export default function TabletY() {
             </ScrollAnimation>
             <ScrollAnimation animateIn="animate__fadeInRight" duration="0.8">
               <WelcomeDescription>
-                <h2>Welcome to</h2>
+                <h2>Welcome to tab</h2>
                 <img src="/images/logo.svg" alt="" />
                 <p>
                   What is Sipher?
@@ -1059,6 +1059,7 @@ export default function TabletY() {
           </Content>
         </Welcome>
       </Mid>
+   
     </Wrap>
   );
 }

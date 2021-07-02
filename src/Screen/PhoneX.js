@@ -8,11 +8,10 @@ import Button from "./components/Button";
 // import { Animated } from "react-animated-css";
 
 const Wrap = styled.div`
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  width: 100%;
   p {
     font-size: 0.8rem;
   }
@@ -209,14 +208,14 @@ const CardList = styled.div`
   }
 `;
 const SecondRight = styled.div`
-  width: 24rem;
+  width: 22rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding: 0rem 0rem 0rem 2rem;
+  padding: 0rem 0rem 0rem 1rem;
   .underline {
-    width: 24rem;
+    width: 22rem;
   }
 `;
 const SecondRightP1 = styled.div`
@@ -231,8 +230,8 @@ const SecondRightP1 = styled.div`
     padding-top: 0rem;
     margin: 0rem;
   }
-  .P1img{
-      width: 4rem;
+  .P1img {
+    width: 2.8rem;
   }
 `;
 const SecondRightIconList = styled.div`
@@ -248,7 +247,7 @@ const SecondRightIconList = styled.div`
     align-items: center;
   }
   img {
-    padding: 0.5rem 3rem;
+    padding: 0.25rem 3rem;
     width: 1.5rem;
     height: 1.5rem;
   }
@@ -264,15 +263,16 @@ const ThirdContent = styled.div`
   align-items: center;
 `;
 const ThirdHeader = styled.div`
-  margin: 2rem 0rem 4rem 5rem;
+  margin: -1rem 0rem 0rem 8rem;
   h1 {
     font-size: 2rem;
     margin-left: 4rem;
-    height: 5rem;
+    margin-bottom: -0.25rem;
   }
   img {
     margin-top: -1rem;
     width: 80%;
+    margin-bottom: 2rem;
   }
 `;
 const ThirdLeft = styled.div`
@@ -281,8 +281,8 @@ const ThirdLeft = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   img {
-    width: 28rem;
-    margin-bottom: -20rem;
+    width: 16rem;
+    margin-bottom: -6rem;
     margin-left: -4.5rem;
   }
 `;
@@ -291,29 +291,31 @@ const ThirdRight = styled.div`
 `;
 const ThirdRightItem = styled.div`
   text-align: left;
-  padding: 2rem 8rem 2rem 0rem;
+  padding: 0rem 1rem 0.5rem 0rem;
   div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 32rem;
+    width: 26rem;
   }
   h4 {
-    font-size: 2rem;
+    font-size: 1rem;
     margin: 0rem;
     padding: 0rem 1rem;
   }
   h5 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     color: #b3b89a;
   }
   img {
     align-self: flex-end;
-    width: 32rem;
+    width: 26rem;
   }
   ul {
     margin: 0rem;
+    font-size: 0.8rem;
+    color: white;
   }
 `;
 const FourTHContent = styled.div`
@@ -322,7 +324,7 @@ const FourTHContent = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 4rem;
-  margin-left: -8rem;
+  margin-left: -12rem;
   position: relative;
   span {
     color: red;
@@ -332,7 +334,7 @@ const FourTHContent = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 28rem;
+    width: 24rem;
   }
   label {
     text-align: left;
@@ -358,13 +360,13 @@ const FourTHHeader = styled.div`
   h1 {
     font-size: 2rem;
     margin-left: 4rem;
-    height: 5rem;
   }
   img {
     margin-top: -1rem;
+    width: 28rem;
   }
   h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: normal;
     margin-left: 4rem;
   }
@@ -376,6 +378,7 @@ const Socials = styled.div`
   align-items: flex-start;
   margin-top: ${(props) => (props.Subcribed ? "1rem" : "4rem")};
   width: 28rem;
+  margin-left: 4rem;
 `;
 const SocialList = styled.div`
   width: 28rem;
@@ -390,8 +393,9 @@ const SocialList = styled.div`
 `;
 const Subcribe = styled.img`
   position: absolute;
-  top: 24rem;
-  right: 0.5rem;
+  top: 15rem;
+  right: 1.5rem;
+  width: 8rem;
 `;
 const ThirdHalfContent = styled.div`
   width: 100%;
@@ -408,10 +412,10 @@ const Clock = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-left: 4rem;
+  margin-left: 2rem;
   margin-bottom: 0.5rem;
   p {
-    font-size: 4rem;
+    font-size: 2rem;
     margin-top: -3rem;
     background: -webkit-linear-gradient(
       180deg,
@@ -433,8 +437,8 @@ const ClockItem = styled.div`
     background-image: url("/images/bgClock.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 10rem;
-    height: 10rem;
+    width: 6rem;
+    height: 6rem;
     margin: 0rem;
     display: flex;
     flex-direction: column;
@@ -443,38 +447,41 @@ const ClockItem = styled.div`
   }
   h5 {
     margin-top: 0.8rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
     font-weight: 500;
-  }
+  }6
 `;
 const ThirdHalfHeader = styled.div`
-  margin: 0rem 0rem 1rem -8rem;
+  margin: 2.5rem 0rem 1rem -4rem;
   h1 {
     font-size: 2rem;
     margin-left: 4rem;
-    height: 5rem;
   }
   img {
-    margin-top: -1rem;
+    margin-top: -4rem;
+    width: 24rem;
   }
   h2 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: normal;
     margin-left: 4rem;
+    font-weight: 1000;
   }
 `;
 const ComingSoonContent = styled.div`
-  width: 60%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-left: 18%;
-
+  margin-left: 12%;
   p {
     margin-left: 4%;
     margin-top: 0rem;
+  }
+  img{
+      width: 24rem;
   }
 `;
 
@@ -567,7 +574,7 @@ export default function PhoneX() {
             </ScrollAnimation>
             <ScrollAnimation animateIn="animate__fadeInRight" duration="0.8">
               <WelcomeDescription>
-                <h2>Welcome to</h2>
+                <h2>Welcome to phone</h2>
                 <img src="/images/logo.svg" alt="" />
                 <p>
                   What is Sipher?
@@ -767,7 +774,7 @@ export default function PhoneX() {
                   duration="0.6"
                 >
                   <SecondRightP1>
-                    <img className='P1img' src="/images/card_4.svg" alt="" />
+                    <img className="P1img" src="/images/card_4.svg" alt="" />
                     <p>
                       Each NFT you own becomes a companion you can chat with.
                       They differ not only in appearance but also in personality
@@ -805,7 +812,7 @@ export default function PhoneX() {
                   duration="0.7"
                 >
                   <SecondRightP1>
-                    <img className='P1img' src="/images/money.svg" alt="" />
+                    <img className="P1img" src="/images/money.svg" alt="" />
                     <p>
                       Your NFTs may possess the knowledge of investing in
                       cryptocurrencies like a guru and is always ready to give
@@ -818,7 +825,7 @@ export default function PhoneX() {
                   duration="0.75"
                 >
                   <SecondRightP1>
-                    <img className='P1img' src="/images/hand.svg" alt="" />
+                    <img className="P1img" src="/images/hand.svg" alt="" />
                     <p>
                       Your NFTs may possess ability to keep track of your
                       favorite cryptocurrencies to make notifications of your
@@ -831,7 +838,7 @@ export default function PhoneX() {
                   duration="0.8"
                 >
                   <SecondRightP1>
-                    <img className='P1img' src="/images/magic.svg" alt="" />
+                    <img className="P1img" src="/images/magic.svg" alt="" />
                     <p>
                       Your NFTs may possess ability to follow up on your
                       favorite cryptocurrency news to keep you updated ASAP.
