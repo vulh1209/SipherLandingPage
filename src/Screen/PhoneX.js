@@ -109,10 +109,11 @@ const H4WithLineLeft = styled.div`
   h4 {
     font-size: 1.5rem;
     margin: 0rem;
-    padding: 0rem 1rem;
+    padding: 0rem;
   }
   img {
-    width: 20rem;
+      margin-right: 1rem;
+    width: 16rem;
   }
 `;
 const H4WithLineRight = styled.div`
@@ -173,18 +174,18 @@ const SecondContent = styled.div`
   }
 `;
 const SecondLeft = styled.div`
-  width: 18rem;
+  width: 17rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   margin-top: 4rem;
   h4 {
-    padding: 1rem 2rem 0rem 0rem;
+    padding: 1rem 1rem 0rem 0rem;
     font-size: 1rem;
   }
   p {
-    padding: 0rem 2rem 0rem 0rem;
+    padding: 0rem 1rem 0rem 0rem;
     margin: 0rem 0rem 1rem 0rem;
     width: 16rem;
     text-align: right;
@@ -263,11 +264,10 @@ const ThirdContent = styled.div`
   align-items: center;
 `;
 const ThirdHeader = styled.div`
-  margin: -1rem 0rem 0rem 8rem;
+  margin: -0.5rem 0rem 0rem 8rem;
   h1 {
     font-size: 2rem;
     margin-left: 4rem;
-    margin-bottom: -0.25rem;
   }
   img {
     margin-top: -1rem;
