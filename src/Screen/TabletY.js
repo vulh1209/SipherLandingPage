@@ -264,13 +264,13 @@ const ThirdLeft = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   img {
-    width: 28rem;
+    width: 26rem;
     margin-bottom: -20rem;
     margin-left: -4.5rem;
   }
 `;
 const ThirdRight = styled.div`
-  width: 40rem;
+  width: 40em;
 `;
 const ThirdRightItem = styled.div`
   text-align: left;
@@ -377,13 +377,12 @@ const Subcribe = styled.img`
   right: 0.5rem;
 `;
 const ThirdHalfContent = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 4rem;
-  padding-left: 3rem;
+  margin-left: 6rem;
   position: relative;
 `;
 const Clock = styled.div`
@@ -448,7 +447,7 @@ const ThirdHalfHeader = styled.div`
   }
 `;
 const ComingSoonContent = styled.div`
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
